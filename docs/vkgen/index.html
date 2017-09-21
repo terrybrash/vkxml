@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `vkgen` crate.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, vkgen">
+
+    <title>vkgen - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc mod">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Crate vkgen</p><div class="block items"><ul><li><a href="#structs">Structs</a></li><li><a href="#enums">Enums</a></li><li><a href="#types">Type Definitions</a></li></ul></div><p class='location'></p><script>window.sidebarCurrent = {name: 'vkgen', ty: 'mod', relpath: '../'};</script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Crate <a class="mod" href=''>vkgen</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../src/vkgen/main.rs.html#1-978' title='goto source code'>[src]</a></span></h1>
+<h2 id='structs' class='section-header'><a href="#structs">Structs</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Array.html"
+                                  title='struct vkgen::Array'>Array</a></td>
+                           <td class='docblock-short'>
+                                <p>C array (dynamic or static)</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.BarValue.html"
+                                  title='struct vkgen::BarValue'>BarValue</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Bitmask.html"
+                                  title='struct vkgen::Bitmask'>Bitmask</a></td>
+                           <td class='docblock-short'>
+                                <p>Definition that specifies a bitmask, using a particular existing type. Contents are the same
+as <code>typedef</code>. The possible bits can be defined by a specific, referenced enumeration.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Command.html"
+                                  title='struct vkgen::Command'>Command</a></td>
+                           <td class='docblock-short'>
+                                <p>Defines a single Vulkan entrypoint.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Commands.html"
+                                  title='struct vkgen::Commands'>Commands</a></td>
+                           <td class='docblock-short'>
+                                <p>Defines a list of Vulkan entrypoints.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Constant.html"
+                                  title='struct vkgen::Constant'>Constant</a></td>
+                           <td class='docblock-short'>
+                                <p>C constant</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Constants.html"
+                                  title='struct vkgen::Constants'>Constants</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Define.html"
+                                  title='struct vkgen::Define'>Define</a></td>
+                           <td class='docblock-short'>
+                                <p>C <code>#define</code> statement.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Definitions.html"
+                                  title='struct vkgen::Definitions'>Definitions</a></td>
+                           <td class='docblock-short'>
+                                <p>List of all definitions used by Vulkan</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Enum.html"
+                                  title='struct vkgen::Enum'>Enum</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Enumeration.html"
+                                  title='struct vkgen::Enumeration'>Enumeration</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.EnumerationDeclaration.html"
+                                  title='struct vkgen::EnumerationDeclaration'>EnumerationDeclaration</a></td>
+                           <td class='docblock-short'>
+                                <p>Declares the name of an enumeration.
+The members and base type of the enumeration are defined elsewhere.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Enums.html"
+                                  title='struct vkgen::Enums'>Enums</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Extension.html"
+                                  title='struct vkgen::Extension'>Extension</a></td>
+                           <td class='docblock-short'>
+                                <p>Specifies the types exposed/forbidden by an extension</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.ExtensionConstant.html"
+                                  title='struct vkgen::ExtensionConstant'>ExtensionConstant</a></td>
+                           <td class='docblock-short'>
+                                <p>Defines a constant exported by an extension.
+These are not enumerators.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.ExtensionEnum.html"
+                                  title='struct vkgen::ExtensionEnum'>ExtensionEnum</a></td>
+                           <td class='docblock-short'>
+                                <p>Declares a new enumerator that is added to an existing enumerator.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.ExtensionSpecification.html"
+                                  title='struct vkgen::ExtensionSpecification'>ExtensionSpecification</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Extensions.html"
+                                  title='struct vkgen::Extensions'>Extensions</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.ExternalSync.html"
+                                  title='struct vkgen::ExternalSync'>ExternalSync</a></td>
+                           <td class='docblock-short'>
+                                <p>Describes instances of implicit external synchronizations.
+These cannot be captured by the parameters themselves.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Feature.html"
+                                  title='struct vkgen::Feature'>Feature</a></td>
+                           <td class='docblock-short'>
+                                <p>Defines the base API for a Vulkan specification.
+Represents a specific major/minor version of Vulkan.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.FeatureSpecification.html"
+                                  title='struct vkgen::FeatureSpecification'>FeatureSpecification</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Features.html"
+                                  title='struct vkgen::Features'>Features</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.FunctionPointer.html"
+                                  title='struct vkgen::FunctionPointer'>FunctionPointer</a></td>
+                           <td class='docblock-short'>
+                                <p>If it has no function parameters, then it should be rendered out for C/C++ with just
+&quot;void&quot; in the parameter list. And just &quot;void&quot; should not be in a <code>&lt;type&gt;</code> element, as it
+does not qualify as a parameter type.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Handle.html"
+                                  title='struct vkgen::Handle'>Handle</a></td>
+                           <td class='docblock-short'>
+                                <p>Creates a definition for a handle.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Include.html"
+                                  title='struct vkgen::Include'>Include</a></td>
+                           <td class='docblock-short'>
+                                <p>Definition that represents a file being included, which is named.
+The <code>name</code> attribute does double-duty, in that it also includes text.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.NamedIdentifier.html"
+                                  title='struct vkgen::NamedIdentifier'>NamedIdentifier</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Parameter.html"
+                                  title='struct vkgen::Parameter'>Parameter</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Range.html"
+                                  title='struct vkgen::Range'>Range</a></td>
+                           <td class='docblock-short'>
+                                <p>Represents a range of enumerators.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Reference.html"
+                                  title='struct vkgen::Reference'>Reference</a></td>
+                           <td class='docblock-short'>
+                                <p>Definition that references a type that potentially comes from an include file.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Registry.html"
+                                  title='struct vkgen::Registry'>Registry</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.ResultCodes.html"
+                                  title='struct vkgen::ResultCodes'>ResultCodes</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.ReturnType.html"
+                                  title='struct vkgen::ReturnType'>ReturnType</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Struct.html"
+                                  title='struct vkgen::Struct'>Struct</a></td>
+                           <td class='docblock-short'>
+                                <p>Definition that represents a data structure.
+Contains a list of members and optional validation information.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.StructMember.html"
+                                  title='struct vkgen::StructMember'>StructMember</a></td>
+                           <td class='docblock-short'>
+                                <p>Specifies a named member of a data structure.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Tag.html"
+                                  title='struct vkgen::Tag'>Tag</a></td>
+                           <td class='docblock-short'>
+                                <p>A single author for Vulkan</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Tags.html"
+                                  title='struct vkgen::Tags'>Tags</a></td>
+                           <td class='docblock-short'>
+                                <p>List of authors</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Type.html"
+                                  title='struct vkgen::Type'>Type</a></td>
+                           <td class='docblock-short'>
+                                <p>All of the attributes that represent the type of a
+struct member, function parameter or return value.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Typedef.html"
+                                  title='struct vkgen::Typedef'>Typedef</a></td>
+                           <td class='docblock-short'>
+                                <p>Definition that defines a new name for an existing type.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Union.html"
+                                  title='struct vkgen::Union'>Union</a></td>
+                           <td class='docblock-short'>
+                                <p>Defines a union, where the object&#39;s value is only one of the members.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.UnionMember.html"
+                                  title='struct vkgen::UnionMember'>UnionMember</a></td>
+                           <td class='docblock-short'>
+                                <p>Specifies a named member of a union.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Variable.html"
+                                  title='struct vkgen::Variable'>Variable</a></td>
+                           <td class='docblock-short'>
+                                <p>Data model describing type information for a variable.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.VendorId.html"
+                                  title='struct vkgen::VendorId'>VendorId</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.VendorIds.html"
+                                  title='struct vkgen::VendorIds'>VendorIds</a></td>
+                           <td class='docblock-short'>
+                                <p>List of identifiers for vendors.</p>
+                           </td>
+                       </tr></table><h2 id='enums' class='section-header'><a href="#enums">Enums</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.ArraySize.html"
+                                  title='enum vkgen::ArraySize'>ArraySize</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.ArrayType.html"
+                                  title='enum vkgen::ArrayType'>ArrayType</a></td>
+                           <td class='docblock-short'>
+                                <p>C array type</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.Definition.html"
+                                  title='enum vkgen::Definition'>Definition</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.EnumerationElement.html"
+                                  title='enum vkgen::EnumerationElement'>EnumerationElement</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.EnumsElement.html"
+                                  title='enum vkgen::EnumsElement'>EnumsElement</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.ExtensionElement.html"
+                                  title='enum vkgen::ExtensionElement'>ExtensionElement</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.ExtensionSpecificationElement.html"
+                                  title='enum vkgen::ExtensionSpecificationElement'>ExtensionSpecificationElement</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.ExtensionType.html"
+                                  title='enum vkgen::ExtensionType'>ExtensionType</a></td>
+                           <td class='docblock-short'>
+                                <p>Specifies the kind of extension</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.FeatureElement.html"
+                                  title='enum vkgen::FeatureElement'>FeatureElement</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.FeatureReference.html"
+                                  title='enum vkgen::FeatureReference'>FeatureReference</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.HandleType.html"
+                                  title='enum vkgen::HandleType'>HandleType</a></td>
+                           <td class='docblock-short'>
+                                <p>Whether the handle is dispatchable or not.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.InOut.html"
+                                  title='enum vkgen::InOut'>InOut</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.IncludeStyle.html"
+                                  title='enum vkgen::IncludeStyle'>IncludeStyle</a></td>
+                           <td class='docblock-short'>
+                                <p>Specifies whether to use <code>&quot;&quot;</code> or <code>&lt;&gt;</code> around the include name.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.Pipeline.html"
+                                  title='enum vkgen::Pipeline'>Pipeline</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.ReferenceType.html"
+                                  title='enum vkgen::ReferenceType'>ReferenceType</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.RegistryElement.html"
+                                  title='enum vkgen::RegistryElement'>RegistryElement</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.Renderpass.html"
+                                  title='enum vkgen::Renderpass'>Renderpass</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.StructElement.html"
+                                  title='enum vkgen::StructElement'>StructElement</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr></table><h2 id='types' class='section-header'><a href="#types">Type Definitions</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.CExpression.html"
+                                  title='type vkgen::CExpression'>CExpression</a></td>
+                           <td class='docblock-short'>
+                                <p>Text that is an expression in C.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.CommaSeparatedBooleans.html"
+                                  title='type vkgen::CommaSeparatedBooleans'>CommaSeparatedBooleans</a></td>
+                           <td class='docblock-short'>
+                                <p>Comma-separated boolean values.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.CommaSeparatedIdentifiers.html"
+                                  title='type vkgen::CommaSeparatedIdentifiers'>CommaSeparatedIdentifiers</a></td>
+                           <td class='docblock-short'>
+                                <p>Comma-separated identifiers values.
+Can be empty.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.HexadecimalNumber.html"
+                                  title='type vkgen::HexadecimalNumber'>HexadecimalNumber</a></td>
+                           <td class='docblock-short'>
+                                <p>Recognize a hexadecimal number.
+Not prefixed with &quot;0x&quot;</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.Identifier.html"
+                                  title='type vkgen::Identifier'>Identifier</a></td>
+                           <td class='docblock-short'>
+                                <p>Should be a valid C/C++ identifier.</p>
+                           </td>
+                       </tr></table></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "vkgen";
+    </script>
+    <script src="../main.js"></script>
+    <script defer src="../search-index.js"></script>
+</body>
+</html>

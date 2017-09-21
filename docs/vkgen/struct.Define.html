@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Define` struct in crate `vkgen`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Define">
+
+    <title>vkgen::Define - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Struct Define</p><div class="block items"><ul><li><a href="#fields">Fields</a></li><li><a href="#implementations">Trait Implementations</a></li></ul></div><p class='location'><a href='index.html'>vkgen</a></p><script>window.sidebarCurrent = {name: 'Define', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='index.html'>vkgen</a>::<wbr><a class="struct" href=''>Define</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../src/vkgen/main.rs.html#165-192' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct Define {
+    pub name: <a class="type" href="../vkgen/type.Identifier.html" title="type vkgen::Identifier">Identifier</a>,
+    pub notation: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>&gt;,
+    pub is_disabled: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>&gt;,
+    pub comment: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>&gt;,
+    pub replace: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>&gt;,
+    pub defref: <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="type" href="../vkgen/type.Identifier.html" title="type vkgen::Identifier">Identifier</a>&gt;,
+    pub parameters: <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="type" href="../vkgen/type.Identifier.html" title="type vkgen::Identifier">Identifier</a>&gt;,
+    pub c_expression: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>&gt;,
+    pub value: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>&gt;,
+}</pre><div class='docblock'><p>C <code>#define</code> statement.</p>
+
+<p>The 4 forms of defines:</p>
+
+<ul>
+<li><code>#define {name} {c_expression}</code></li>
+<li><code>#define {name}({parameters}) {c_expression}</code></li>
+<li><code>{c_expression}</code></li>
+<li><code>#define {name} {value}</code></li>
+</ul>
+
+<p>If <code>value</code> exists, the macro is simply <code>#define {name} {value}</code>. This type of macro definition
+represents something that is generally language-neutral; a decimal number or string literal, 
+for example.</p>
+
+<p>If <code>value</code> does not exist, the macro will be a C-expression with optional parameters and 
+defrefs.</p>
+</div><h2 id='fields' class='fields small-section-header'>
+                       Fields<a href='#fields' class='anchor'></a></h2><span id="structfield.name" class="structfield small-section-header">
+                           <a href="#structfield.name" class="anchor field"></a>
+                           <span id="name.v" class='invisible'>
+                           <code>name: <a class="type" href="../vkgen/type.Identifier.html" title="type vkgen::Identifier">Identifier</a></code>
+                           </span></span><span id="structfield.notation" class="structfield small-section-header">
+                           <a href="#structfield.notation" class="anchor field"></a>
+                           <span id="notation.v" class='invisible'>
+                           <code>notation: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>&gt;</code>
+                           </span></span><span id="structfield.is_disabled" class="structfield small-section-header">
+                           <a href="#structfield.is_disabled" class="anchor field"></a>
+                           <span id="is_disabled.v" class='invisible'>
+                           <code>is_disabled: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>&gt;</code>
+                           </span></span><div class='docblock'><p>If &quot;true&quot;, then the processing system should add comments to each line of the
+<code>#define</code>. That is, the <code>#define</code> exists, but has been commented out for some
+reason.</p>
+</div><span id="structfield.comment" class="structfield small-section-header">
+                           <a href="#structfield.comment" class="anchor field"></a>
+                           <span id="comment.v" class='invisible'>
+                           <code>comment: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>&gt;</code>
+                           </span></span><div class='docblock'><p>Specifies a possibly multi-line in-language comment which is expected to be
+placed near the element in which <code>comment</code> appears.</p>
+</div><span id="structfield.replace" class="structfield small-section-header">
+                           <a href="#structfield.replace" class="anchor field"></a>
+                           <span id="replace.v" class='invisible'>
+                           <code>replace: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>&gt;</code>
+                           </span></span><div class='docblock'><p>If <code>true</code>, then the processor should not attempt to generate the <code>#define</code> statement at all.
+The entire c-expression will include the <code>#define</code>, as well as the typename of the define, 
+and any parameters. This is used for very complex macros.</p>
+</div><span id="structfield.defref" class="structfield small-section-header">
+                           <a href="#structfield.defref" class="anchor field"></a>
+                           <span id="defref.v" class='invisible'>
+                           <code>defref: <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="type" href="../vkgen/type.Identifier.html" title="type vkgen::Identifier">Identifier</a>&gt;</code>
+                           </span></span><div class='docblock'><p>Specifies a definition that is referenced in the C-expression.</p>
+</div><span id="structfield.parameters" class="structfield small-section-header">
+                           <a href="#structfield.parameters" class="anchor field"></a>
+                           <span id="parameters.v" class='invisible'>
+                           <code>parameters: <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="type" href="../vkgen/type.Identifier.html" title="type vkgen::Identifier">Identifier</a>&gt;</code>
+                           </span></span><div class='docblock'><p>The name of a <code>#define</code>&#39;s parameter.</p>
+</div><span id="structfield.c_expression" class="structfield small-section-header">
+                           <a href="#structfield.c_expression" class="anchor field"></a>
+                           <span id="c_expression.v" class='invisible'>
+                           <code>c_expression: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>&gt;</code>
+                           </span></span><div class='docblock'><p>Text that is intended to be used verbatim in C or C++ implementations.
+If the <code>replace</code> attribute is not <code>true</code>, then the processor should
+generate the <code>#define {name}({parameters})</code> part of the define before the c-expression.</p>
+</div><span id="structfield.value" class="structfield small-section-header">
+                           <a href="#structfield.value" class="anchor field"></a>
+                           <span id="value.v" class='invisible'>
+                           <code>value: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>&gt;</code>
+                           </span></span><div class='docblock'><p>Decimal number or string literal.</p>
+</div>
+            <h2 id='implementations' class='small-section-header'>
+              Trait Implementations<a href='#implementations' class='anchor'></a>
+            </h2>
+        <h3 id='impl-Debug' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a> for <a class="struct" href="../vkgen/struct.Define.html" title="struct vkgen::Define">Define</a></code><a href='#impl-Debug' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/vkgen/main.rs.html#163' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class="method"><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class="struct" href="https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html" title="struct core::fmt::Formatter">Formatter</a>) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/vkgen/main.rs.html#163' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Formats the value using the given formatter.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "vkgen";
+    </script>
+    <script src="../main.js"></script>
+    <script defer src="../search-index.js"></script>
+</body>
+</html>
