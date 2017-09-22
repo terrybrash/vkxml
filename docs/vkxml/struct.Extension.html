@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Extension` struct in crate `vkxml`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Extension">
+
+    <title>vkxml::Extension - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Struct Extension</p><div class="block items"><ul><li><a href="#fields">Fields</a></li><li><a href="#implementations">Trait Implementations</a></li></ul></div><p class='location'><a href='index.html'>vkxml</a></p><script>window.sidebarCurrent = {name: 'Extension', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='index.html'>vkxml</a>::<wbr><a class="struct" href=''>Extension</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../src/vkxml/lib.rs.html#569-596' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct Extension {
+    pub name: <a class="type" href="../vkxml/type.Identifier.html" title="type vkxml::Identifier">Identifier</a>,
+    pub notation: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>&gt;,
+    pub number: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>,
+    pub disabled: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>,
+    pub match_api: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>&gt;,
+    pub ty: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="enum" href="../vkxml/enum.ExtensionType.html" title="enum vkxml::ExtensionType">ExtensionType</a>&gt;,
+    pub define: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="type" href="../vkxml/type.Identifier.html" title="type vkxml::Identifier">Identifier</a>&gt;,
+    pub requires: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="type" href="../vkxml/type.CommaSeparatedIdentifiers.html" title="type vkxml::CommaSeparatedIdentifiers">CommaSeparatedIdentifiers</a>&gt;,
+    pub author: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>&gt;,
+    pub contact: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>&gt;,
+    pub elements: <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="enum" href="../vkxml/enum.ExtensionElement.html" title="enum vkxml::ExtensionElement">ExtensionElement</a>&gt;,
+}</pre><div class='docblock'><p>Specifies the types exposed/forbidden by an extension</p>
+</div><h2 id='fields' class='fields small-section-header'>
+                       Fields<a href='#fields' class='anchor'></a></h2><span id="structfield.name" class="structfield small-section-header">
+                           <a href="#structfield.name" class="anchor field"></a>
+                           <span id="name.v" class='invisible'>
+                           <code>name: <a class="type" href="../vkxml/type.Identifier.html" title="type vkxml::Identifier">Identifier</a></code>
+                           </span></span><span id="structfield.notation" class="structfield small-section-header">
+                           <a href="#structfield.notation" class="anchor field"></a>
+                           <span id="notation.v" class='invisible'>
+                           <code>notation: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>&gt;</code>
+                           </span></span><span id="structfield.number" class="structfield small-section-header">
+                           <a href="#structfield.number" class="anchor field"></a>
+                           <span id="number.v" class='invisible'>
+                           <code>number: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a></code>
+                           </span></span><div class='docblock'><p>The extension&#39;s registration number.
+Used to compute the offsets for enumerators and the like.</p>
+</div><span id="structfield.disabled" class="structfield small-section-header">
+                           <a href="#structfield.disabled" class="anchor field"></a>
+                           <span id="disabled.v" class='invisible'>
+                           <code>disabled: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code>
+                           </span></span><div class='docblock'><p>Specifies that the extension is disabled.</p>
+</div><span id="structfield.match_api" class="structfield small-section-header">
+                           <a href="#structfield.match_api" class="anchor field"></a>
+                           <span id="match_api.v" class='invisible'>
+                           <code>match_api: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>&gt;</code>
+                           </span></span><div class='docblock'><p>A regex used to match an <code>api</code> tag on a <code>feature</code> element.
+If it matches, then the extension can be used with that API.</p>
+</div><span id="structfield.ty" class="structfield small-section-header">
+                           <a href="#structfield.ty" class="anchor field"></a>
+                           <span id="ty.v" class='invisible'>
+                           <code>ty: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="enum" href="../vkxml/enum.ExtensionType.html" title="enum vkxml::ExtensionType">ExtensionType</a>&gt;</code>
+                           </span></span><span id="structfield.define" class="structfield small-section-header">
+                           <a href="#structfield.define" class="anchor field"></a>
+                           <span id="define.v" class='invisible'>
+                           <code>define: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="type" href="../vkxml/type.Identifier.html" title="type vkxml::Identifier">Identifier</a>&gt;</code>
+                           </span></span><div class='docblock'><p>When generating C-style information, use this as the #define wrapper
+around this feature.</p>
+</div><span id="structfield.requires" class="structfield small-section-header">
+                           <a href="#structfield.requires" class="anchor field"></a>
+                           <span id="requires.v" class='invisible'>
+                           <code>requires: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="type" href="../vkxml/type.CommaSeparatedIdentifiers.html" title="type vkxml::CommaSeparatedIdentifiers">CommaSeparatedIdentifiers</a>&gt;</code>
+                           </span></span><div class='docblock'><p>A comma-separated list of identifiers, specifying
+extensions this extension requires in order to function.</p>
+</div><span id="structfield.author" class="structfield small-section-header">
+                           <a href="#structfield.author" class="anchor field"></a>
+                           <span id="author.v" class='invisible'>
+                           <code>author: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>&gt;</code>
+                           </span></span><div class='docblock'><p>The name of the author of an extension, typically a company.
+When absent, can be gleamed by using the <code>name</code> and parsing out the
+author part of the name, then finding the corresponding <code>tag</code> element.</p>
+</div><span id="structfield.contact" class="structfield small-section-header">
+                           <a href="#structfield.contact" class="anchor field"></a>
+                           <span id="contact.v" class='invisible'>
+                           <code>contact: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>&gt;</code>
+                           </span></span><div class='docblock'><p>The name and contact info for the person who is responsible for
+the extension. Can be inferred in the same way as <code>author</code>.</p>
+</div><span id="structfield.elements" class="structfield small-section-header">
+                           <a href="#structfield.elements" class="anchor field"></a>
+                           <span id="elements.v" class='invisible'>
+                           <code>elements: <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="enum" href="../vkxml/enum.ExtensionElement.html" title="enum vkxml::ExtensionElement">ExtensionElement</a>&gt;</code>
+                           </span></span>
+            <h2 id='implementations' class='small-section-header'>
+              Trait Implementations<a href='#implementations' class='anchor'></a>
+            </h2>
+        <h3 id='impl-Debug' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a> for <a class="struct" href="../vkxml/struct.Extension.html" title="struct vkxml::Extension">Extension</a></code><a href='#impl-Debug' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/vkxml/lib.rs.html#567' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class="method"><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class="struct" href="https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html" title="struct core::fmt::Formatter">Formatter</a>) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/vkxml/lib.rs.html#567' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Formats the value using the given formatter.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "vkxml";
+    </script>
+    <script src="../main.js"></script>
+    <script defer src="../search-index.js"></script>
+</body>
+</html>
