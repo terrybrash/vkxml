@@ -48,23 +48,9 @@
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a class='srclink' href='../src/vkgen/main.rs.html#1-978' title='goto source code'>[src]</a></span></h1>
+               </span><a class='srclink' href='../src/vkgen/lib.rs.html#1-714' title='goto source code'>[src]</a></span></h1>
 <h2 id='structs' class='section-header'><a href="#structs">Structs</a></h2>
 <table>
-                       <tr class=' module-item'>
-                           <td><a class="struct" href="struct.Array.html"
-                                  title='struct vkgen::Array'>Array</a></td>
-                           <td class='docblock-short'>
-                                <p>C array (dynamic or static)</p>
-                           </td>
-                       </tr>
-                       <tr class=' module-item'>
-                           <td><a class="struct" href="struct.BarValue.html"
-                                  title='struct vkgen::BarValue'>BarValue</a></td>
-                           <td class='docblock-short'>
-                                
-                           </td>
-                       </tr>
                        <tr class=' module-item'>
                            <td><a class="struct" href="struct.Bitmask.html"
                                   title='struct vkgen::Bitmask'>Bitmask</a></td>
@@ -113,13 +99,6 @@ as <code>typedef</code>. The possible bits can be defined by a specific, referen
                                   title='struct vkgen::Definitions'>Definitions</a></td>
                            <td class='docblock-short'>
                                 <p>List of all definitions used by Vulkan</p>
-                           </td>
-                       </tr>
-                       <tr class=' module-item'>
-                           <td><a class="struct" href="struct.Enum.html"
-                                  title='struct vkgen::Enum'>Enum</a></td>
-                           <td class='docblock-short'>
-                                
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -211,12 +190,17 @@ Represents a specific major/minor version of Vulkan.</p>
                            </td>
                        </tr>
                        <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Field.html"
+                                  title='struct vkgen::Field'>Field</a></td>
+                           <td class='docblock-short'>
+                                <p>A typed field used as a member in a struct/union, or as a function parameter.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
                            <td><a class="struct" href="struct.FunctionPointer.html"
                                   title='struct vkgen::FunctionPointer'>FunctionPointer</a></td>
                            <td class='docblock-short'>
-                                <p>If it has no function parameters, then it should be rendered out for C/C++ with just
-&quot;void&quot; in the parameter list. And just &quot;void&quot; should not be in a <code>&lt;type&gt;</code> element, as it
-does not qualify as a parameter type.</p>
+                                <p>Defines a function pointer.</p>
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -237,13 +221,6 @@ The <code>name</code> attribute does double-duty, in that it also includes text.
                        <tr class=' module-item'>
                            <td><a class="struct" href="struct.NamedIdentifier.html"
                                   title='struct vkgen::NamedIdentifier'>NamedIdentifier</a></td>
-                           <td class='docblock-short'>
-                                
-                           </td>
-                       </tr>
-                       <tr class=' module-item'>
-                           <td><a class="struct" href="struct.Parameter.html"
-                                  title='struct vkgen::Parameter'>Parameter</a></td>
                            <td class='docblock-short'>
                                 
                            </td>
@@ -270,13 +247,6 @@ The <code>name</code> attribute does double-duty, in that it also includes text.
                            </td>
                        </tr>
                        <tr class=' module-item'>
-                           <td><a class="struct" href="struct.ResultCodes.html"
-                                  title='struct vkgen::ResultCodes'>ResultCodes</a></td>
-                           <td class='docblock-short'>
-                                
-                           </td>
-                       </tr>
-                       <tr class=' module-item'>
                            <td><a class="struct" href="struct.ReturnType.html"
                                   title='struct vkgen::ReturnType'>ReturnType</a></td>
                            <td class='docblock-short'>
@@ -289,13 +259,6 @@ The <code>name</code> attribute does double-duty, in that it also includes text.
                            <td class='docblock-short'>
                                 <p>Definition that represents a data structure.
 Contains a list of members and optional validation information.</p>
-                           </td>
-                       </tr>
-                       <tr class=' module-item'>
-                           <td><a class="struct" href="struct.StructMember.html"
-                                  title='struct vkgen::StructMember'>StructMember</a></td>
-                           <td class='docblock-short'>
-                                <p>Specifies a named member of a data structure.</p>
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -313,14 +276,6 @@ Contains a list of members and optional validation information.</p>
                            </td>
                        </tr>
                        <tr class=' module-item'>
-                           <td><a class="struct" href="struct.Type.html"
-                                  title='struct vkgen::Type'>Type</a></td>
-                           <td class='docblock-short'>
-                                <p>All of the attributes that represent the type of a
-struct member, function parameter or return value.</p>
-                           </td>
-                       </tr>
-                       <tr class=' module-item'>
                            <td><a class="struct" href="struct.Typedef.html"
                                   title='struct vkgen::Typedef'>Typedef</a></td>
                            <td class='docblock-short'>
@@ -332,20 +287,6 @@ struct member, function parameter or return value.</p>
                                   title='struct vkgen::Union'>Union</a></td>
                            <td class='docblock-short'>
                                 <p>Defines a union, where the object&#39;s value is only one of the members.</p>
-                           </td>
-                       </tr>
-                       <tr class=' module-item'>
-                           <td><a class="struct" href="struct.UnionMember.html"
-                                  title='struct vkgen::UnionMember'>UnionMember</a></td>
-                           <td class='docblock-short'>
-                                <p>Specifies a named member of a union.</p>
-                           </td>
-                       </tr>
-                       <tr class=' module-item'>
-                           <td><a class="struct" href="struct.Variable.html"
-                                  title='struct vkgen::Variable'>Variable</a></td>
-                           <td class='docblock-short'>
-                                <p>Data model describing type information for a variable.</p>
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -364,13 +305,6 @@ struct member, function parameter or return value.</p>
                        </tr></table><h2 id='enums' class='section-header'><a href="#enums">Enums</a></h2>
 <table>
                        <tr class=' module-item'>
-                           <td><a class="enum" href="enum.ArraySize.html"
-                                  title='enum vkgen::ArraySize'>ArraySize</a></td>
-                           <td class='docblock-short'>
-                                
-                           </td>
-                       </tr>
-                       <tr class=' module-item'>
                            <td><a class="enum" href="enum.ArrayType.html"
                                   title='enum vkgen::ArrayType'>ArrayType</a></td>
                            <td class='docblock-short'>
@@ -378,8 +312,8 @@ struct member, function parameter or return value.</p>
                            </td>
                        </tr>
                        <tr class=' module-item'>
-                           <td><a class="enum" href="enum.Definition.html"
-                                  title='enum vkgen::Definition'>Definition</a></td>
+                           <td><a class="enum" href="enum.DefinitionsElement.html"
+                                  title='enum vkgen::DefinitionsElement'>DefinitionsElement</a></td>
                            <td class='docblock-short'>
                                 
                            </td>
@@ -387,6 +321,13 @@ struct member, function parameter or return value.</p>
                        <tr class=' module-item'>
                            <td><a class="enum" href="enum.EnumerationElement.html"
                                   title='enum vkgen::EnumerationElement'>EnumerationElement</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.EnumerationPurpose.html"
+                                  title='enum vkgen::EnumerationPurpose'>EnumerationPurpose</a></td>
                            <td class='docblock-short'>
                                 
                            </td>
@@ -441,13 +382,6 @@ struct member, function parameter or return value.</p>
                            </td>
                        </tr>
                        <tr class=' module-item'>
-                           <td><a class="enum" href="enum.InOut.html"
-                                  title='enum vkgen::InOut'>InOut</a></td>
-                           <td class='docblock-short'>
-                                
-                           </td>
-                       </tr>
-                       <tr class=' module-item'>
                            <td><a class="enum" href="enum.IncludeStyle.html"
                                   title='enum vkgen::IncludeStyle'>IncludeStyle</a></td>
                            <td class='docblock-short'>
@@ -490,6 +424,13 @@ struct member, function parameter or return value.</p>
                            </td>
                        </tr></table><h2 id='types' class='section-header'><a href="#types">Type Definitions</a></h2>
 <table>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.ArraySize.html"
+                                  title='type vkgen::ArraySize'>ArraySize</a></td>
+                           <td class='docblock-short'>
+                                <p><strong>If the array is &quot;static&quot;</strong>, <code>ArraySize</code> specifies an integer literal.</p>
+                           </td>
+                       </tr>
                        <tr class=' module-item'>
                            <td><a class="type" href="type.CExpression.html"
                                   title='type vkgen::CExpression'>CExpression</a></td>

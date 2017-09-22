@@ -48,23 +48,23 @@
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a class='srclink' href='../src/vkgen/main.rs.html#648-671' title='goto source code'>[src]</a></span></h1>
+               </span><a class='srclink' href='../src/vkgen/lib.rs.html#451-470' title='goto source code'>[src]</a></span></h1>
 <pre class='rust struct'>pub struct Command {
-    pub name: <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>,
+    pub name: <a class="type" href="../vkgen/type.Identifier.html" title="type vkgen::Identifier">Identifier</a>,
     pub notation: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>&gt;,
     pub return_type: <a class="struct" href="../vkgen/struct.ReturnType.html" title="struct vkgen::ReturnType">ReturnType</a>,
-    pub param: <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="struct" href="../vkgen/struct.Parameter.html" title="struct vkgen::Parameter">Parameter</a>&gt;,
+    pub param: <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="struct" href="../vkgen/struct.Field.html" title="struct vkgen::Field">Field</a>&gt;,
     pub external_sync: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../vkgen/struct.ExternalSync.html" title="struct vkgen::ExternalSync">ExternalSync</a>&gt;,
     pub renderpass: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="enum" href="../vkgen/enum.Renderpass.html" title="enum vkgen::Renderpass">Renderpass</a>&gt;,
-    pub cmdbufferlevel: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>&gt;,
+    pub cmdbufferlevel: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="type" href="../vkgen/type.CommaSeparatedIdentifiers.html" title="type vkgen::CommaSeparatedIdentifiers">CommaSeparatedIdentifiers</a>&gt;,
     pub pipeline: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="enum" href="../vkgen/enum.Pipeline.html" title="enum vkgen::Pipeline">Pipeline</a>&gt;,
-    pub queues: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>&gt;,
+    pub queues: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="type" href="../vkgen/type.CommaSeparatedIdentifiers.html" title="type vkgen::CommaSeparatedIdentifiers">CommaSeparatedIdentifiers</a>&gt;,
 }</pre><div class='docblock'><p>Defines a single Vulkan entrypoint.</p>
 </div><h2 id='fields' class='fields small-section-header'>
                        Fields<a href='#fields' class='anchor'></a></h2><span id="structfield.name" class="structfield small-section-header">
                            <a href="#structfield.name" class="anchor field"></a>
                            <span id="name.v" class='invisible'>
-                           <code>name: <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a></code>
+                           <code>name: <a class="type" href="../vkgen/type.Identifier.html" title="type vkgen::Identifier">Identifier</a></code>
                            </span></span><span id="structfield.notation" class="structfield small-section-header">
                            <a href="#structfield.notation" class="anchor field"></a>
                            <span id="notation.v" class='invisible'>
@@ -76,7 +76,7 @@
                            </span></span><span id="structfield.param" class="structfield small-section-header">
                            <a href="#structfield.param" class="anchor field"></a>
                            <span id="param.v" class='invisible'>
-                           <code>param: <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="struct" href="../vkgen/struct.Parameter.html" title="struct vkgen::Parameter">Parameter</a>&gt;</code>
+                           <code>param: <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="struct" href="../vkgen/struct.Field.html" title="struct vkgen::Field">Field</a>&gt;</code>
                            </span></span><span id="structfield.external_sync" class="structfield small-section-header">
                            <a href="#structfield.external_sync" class="anchor field"></a>
                            <span id="external_sync.v" class='invisible'>
@@ -91,7 +91,7 @@ or the command isn&#39;t a vkCmd command.</p>
 </div><span id="structfield.cmdbufferlevel" class="structfield small-section-header">
                            <a href="#structfield.cmdbufferlevel" class="anchor field"></a>
                            <span id="cmdbufferlevel.v" class='invisible'>
-                           <code>cmdbufferlevel: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>&gt;</code>
+                           <code>cmdbufferlevel: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="type" href="../vkgen/type.CommaSeparatedIdentifiers.html" title="type vkgen::CommaSeparatedIdentifiers">CommaSeparatedIdentifiers</a>&gt;</code>
                            </span></span><div class='docblock'><p>Specifies the level of command buffer that the command can be used with.
 When not specified, the command does not go into a command buffer.
 { &quot;primary&quot; | &quot;secondary&quot; | &quot;primary,secondary&quot; }</p>
@@ -103,15 +103,15 @@ When not specified, the command does not go into a command buffer.
 </div><span id="structfield.queues" class="structfield small-section-header">
                            <a href="#structfield.queues" class="anchor field"></a>
                            <span id="queues.v" class='invisible'>
-                           <code>queues: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>&gt;</code>
+                           <code>queues: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="type" href="../vkgen/type.CommaSeparatedIdentifiers.html" title="type vkgen::CommaSeparatedIdentifiers">CommaSeparatedIdentifiers</a>&gt;</code>
                            </span></span><div class='docblock'><p>Comma-separated list of queues that support this operation.
 When not specified, the function cannot be used in a queue.</p>
 </div>
             <h2 id='implementations' class='small-section-header'>
               Trait Implementations<a href='#implementations' class='anchor'></a>
             </h2>
-        <h3 id='impl-Debug' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a> for <a class="struct" href="../vkgen/struct.Command.html" title="struct vkgen::Command">Command</a></code><a href='#impl-Debug' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/vkgen/main.rs.html#646' title='goto source code'>[src]</a></span></h3>
-<div class='impl-items'><h4 id='method.fmt' class="method"><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class="struct" href="https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html" title="struct core::fmt::Formatter">Formatter</a>) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/vkgen/main.rs.html#646' title='goto source code'>[src]</a></span></h4>
+        <h3 id='impl-Debug' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a> for <a class="struct" href="../vkgen/struct.Command.html" title="struct vkgen::Command">Command</a></code><a href='#impl-Debug' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/vkgen/lib.rs.html#449' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class="method"><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class="struct" href="https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html" title="struct core::fmt::Formatter">Formatter</a>) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/vkgen/lib.rs.html#449' title='goto source code'>[src]</a></span></h4>
 <div class='docblock'><p>Formats the value using the given formatter.</p>
 </div></div></section>
     <section id='search' class="content hidden"></section>

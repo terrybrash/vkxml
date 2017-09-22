@@ -48,47 +48,40 @@
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a class='srclink' href='../src/vkgen/main.rs.html#249-264' title='goto source code'>[src]</a></span></h1>
+               </span><a class='srclink' href='../src/vkgen/lib.rs.html#227-237' title='goto source code'>[src]</a></span></h1>
 <pre class='rust struct'>pub struct ReturnType {
     pub basetype: <a class="type" href="../vkgen/type.Identifier.html" title="type vkgen::Identifier">Identifier</a>,
-    pub array: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../vkgen/struct.Array.html" title="struct vkgen::Array">Array</a>&gt;,
-    pub is_const: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>&gt;,
-    pub is_struct: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>&gt;,
     pub reference: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="enum" href="../vkgen/enum.ReferenceType.html" title="enum vkgen::ReferenceType">ReferenceType</a>&gt;,
+    pub successcodes: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="type" href="../vkgen/type.CommaSeparatedIdentifiers.html" title="type vkgen::CommaSeparatedIdentifiers">CommaSeparatedIdentifiers</a>&gt;,
+    pub errorcodes: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="type" href="../vkgen/type.CommaSeparatedIdentifiers.html" title="type vkgen::CommaSeparatedIdentifiers">CommaSeparatedIdentifiers</a>&gt;,
 }</pre><h2 id='fields' class='fields small-section-header'>
                        Fields<a href='#fields' class='anchor'></a></h2><span id="structfield.basetype" class="structfield small-section-header">
                            <a href="#structfield.basetype" class="anchor field"></a>
                            <span id="basetype.v" class='invisible'>
                            <code>basetype: <a class="type" href="../vkgen/type.Identifier.html" title="type vkgen::Identifier">Identifier</a></code>
-                           </span></span><span id="structfield.array" class="structfield small-section-header">
-                           <a href="#structfield.array" class="anchor field"></a>
-                           <span id="array.v" class='invisible'>
-                           <code>array: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../vkgen/struct.Array.html" title="struct vkgen::Array">Array</a>&gt;</code>
-                           </span></span><span id="structfield.is_const" class="structfield small-section-header">
-                           <a href="#structfield.is_const" class="anchor field"></a>
-                           <span id="is_const.v" class='invisible'>
-                           <code>is_const: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>&gt;</code>
-                           </span></span><div class='docblock'><p>If <code>true</code>, then the variable&#39;s base type is constant. If the type is
-a pointer or array, the <code>const</code> refers to the base type. So <code>const T *</code> rather
-than <code>T *const</code>.</p>
-</div><span id="structfield.is_struct" class="structfield small-section-header">
-                           <a href="#structfield.is_struct" class="anchor field"></a>
-                           <span id="is_struct.v" class='invisible'>
-                           <code>is_struct: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>&gt;</code>
-                           </span></span><div class='docblock'><p>If <code>true</code>, then the basetype name needs to be preceeded by the C keyword
-&quot;struct&quot; when interfacing with C.</p>
-</div><span id="structfield.reference" class="structfield small-section-header">
+                           </span></span><span id="structfield.reference" class="structfield small-section-header">
                            <a href="#structfield.reference" class="anchor field"></a>
                            <span id="reference.v" class='invisible'>
                            <code>reference: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="enum" href="../vkgen/enum.ReferenceType.html" title="enum vkgen::ReferenceType">ReferenceType</a>&gt;</code>
-                           </span></span><div class='docblock'><p>If present, then the variable is a pointer of some sort.
-This does not guarantee that variable is an <em>array</em>.</p>
+                           </span></span><div class='docblock'><p>If present, then the variable is a pointer of some sort.</p>
+</div><span id="structfield.successcodes" class="structfield small-section-header">
+                           <a href="#structfield.successcodes" class="anchor field"></a>
+                           <span id="successcodes.v" class='invisible'>
+                           <code>successcodes: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="type" href="../vkgen/type.CommaSeparatedIdentifiers.html" title="type vkgen::CommaSeparatedIdentifiers">CommaSeparatedIdentifiers</a>&gt;</code>
+                           </span></span><div class='docblock'><p>Specifies the return codes that represent successful function execution.
+When not specified, then the command doesn&#39;t return <code>VkResult</code></p>
+</div><span id="structfield.errorcodes" class="structfield small-section-header">
+                           <a href="#structfield.errorcodes" class="anchor field"></a>
+                           <span id="errorcodes.v" class='invisible'>
+                           <code>errorcodes: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="type" href="../vkgen/type.CommaSeparatedIdentifiers.html" title="type vkgen::CommaSeparatedIdentifiers">CommaSeparatedIdentifiers</a>&gt;</code>
+                           </span></span><div class='docblock'><p>Specifies the return codes that represent error conditions.
+When not specified, either the command doesn&#39;t return <code>VkResult</code> or it cannot &quot;fail&quot;.</p>
 </div>
             <h2 id='implementations' class='small-section-header'>
               Trait Implementations<a href='#implementations' class='anchor'></a>
             </h2>
-        <h3 id='impl-Debug' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a> for <a class="struct" href="../vkgen/struct.ReturnType.html" title="struct vkgen::ReturnType">ReturnType</a></code><a href='#impl-Debug' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/vkgen/main.rs.html#247' title='goto source code'>[src]</a></span></h3>
-<div class='impl-items'><h4 id='method.fmt' class="method"><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class="struct" href="https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html" title="struct core::fmt::Formatter">Formatter</a>) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/vkgen/main.rs.html#247' title='goto source code'>[src]</a></span></h4>
+        <h3 id='impl-Debug' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a> for <a class="struct" href="../vkgen/struct.ReturnType.html" title="struct vkgen::ReturnType">ReturnType</a></code><a href='#impl-Debug' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/vkgen/lib.rs.html#225' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class="method"><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class="struct" href="https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html" title="struct core::fmt::Formatter">Formatter</a>) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/vkgen/lib.rs.html#225' title='goto source code'>[src]</a></span></h4>
 <div class='docblock'><p>Formats the value using the given formatter.</p>
 </div></div></section>
     <section id='search' class="content hidden"></section>
