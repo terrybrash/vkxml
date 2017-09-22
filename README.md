@@ -4,7 +4,7 @@
 
 **vkxml** has been made for use with [serde-xml-rs](https://github.com/RReverser/serde-xml-rs) and, because of some quirky attributes required by serde-xml-rs, most likely will not work with any other serde xml parser.
 
-# Usage
+## Usage
 
 To get started, you'll need a copy of `vk_new.xml` which you can easily generate by following the directions on [New-Vulkan-XML-Format](https://github.com/NicolBolas/New-Vulkan-XML-Format). `vk_new.xml` is a lossless, reformatted version of Vulkan's `vk.xml` into something that's easier to parse.
 
@@ -18,7 +18,7 @@ vkxml = {git = "https://github.com/terrybrashaw/vkxml"}
 ```
 
 `main.rs`
-```rs
+```rust
 extern crate serde_xml_rs;
 extern crate vkxml;
 
