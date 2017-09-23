@@ -48,7 +48,7 @@
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a class='srclink' href='../src/vkxml/lib.rs.html#1-714' title='goto source code'>[src]</a></span></h1>
+               </span><a class='srclink' href='../src/vkxml/lib.rs.html#1-735' title='goto source code'>[src]</a></span></h1>
 <h2 id='structs' class='section-header'><a href="#structs">Structs</a></h2>
 <table>
                        <tr class=' module-item'>
@@ -207,7 +207,7 @@ Represents a specific major/minor version of Vulkan.</p>
                            <td><a class="struct" href="struct.Handle.html"
                                   title='struct vkxml::Handle'>Handle</a></td>
                            <td class='docblock-short'>
-                                <p>Creates a definition for a handle.</p>
+                                <p>Handle created using <code>VK_DEFINE_HANDLE</code> or <code>VK_DEFINE_NON_DISPATCHABLE_HANDLE</code>.</p>
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -243,7 +243,7 @@ The <code>name</code> attribute does double-duty, in that it also includes text.
                            <td><a class="struct" href="struct.Registry.html"
                                   title='struct vkxml::Registry'>Registry</a></td>
                            <td class='docblock-short'>
-                                
+                                <p>The root of <code>vk_new.xml</code></p>
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -286,7 +286,7 @@ Contains a list of members and optional validation information.</p>
                            <td><a class="struct" href="struct.Union.html"
                                   title='struct vkxml::Union'>Union</a></td>
                            <td class='docblock-short'>
-                                <p>Defines a union, where the object&#39;s value is only one of the members.</p>
+                                <p>Defines a union, where the object&#39;s value is only one of its members.</p>
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -466,6 +466,13 @@ Not prefixed with &quot;0x&quot;</p>
                                   title='type vkxml::Identifier'>Identifier</a></td>
                            <td class='docblock-short'>
                                 <p>Should be a valid C/C++ identifier.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.Notation.html"
+                                  title='type vkxml::Notation'>Notation</a></td>
+                           <td class='docblock-short'>
+                                <p>C comment</p>
                            </td>
                        </tr></table></section>
     <section id='search' class="content hidden"></section>

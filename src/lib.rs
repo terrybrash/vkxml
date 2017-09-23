@@ -1,6 +1,7 @@
 #[macro_use]
 extern crate serde_derive;
 
+/// The root of `vk_new.xml`
 #[derive(Deserialize, Serialize, Debug)]
 #[serde(rename_all = "kebab-case")]
 pub struct Registry {
@@ -10,7 +11,7 @@ pub struct Registry {
 #[derive(Deserialize, Serialize, Debug)]
 #[serde(rename_all = "lowercase")]
 pub enum RegistryElement {
-    Notation(String),
+    Notation(Notation),
     VendorIds(VendorIds),
     Tags(Tags),
     Definitions(Definitions),
@@ -25,7 +26,7 @@ pub enum RegistryElement {
 #[derive(Deserialize, Serialize, Debug)]
 #[serde(rename_all = "kebab-case")]
 pub struct VendorIds {
-    pub notation: Option<String>,
+    pub notation: Option<Notation>,
     #[serde(rename = "vendorid")] pub elements: Vec<VendorId>,
 }
 
@@ -33,7 +34,7 @@ pub struct VendorIds {
 #[serde(rename_all = "kebab-case")]
 pub struct VendorId {
     pub name: String,
-    pub notation: Option<String>,
+    pub notation: Option<Notation>,
     /// Hexadecimal integer identifier for a vendor.
     pub id: HexadecimalNumber,
 }
@@ -42,7 +43,7 @@ pub struct VendorId {
 #[derive(Deserialize, Serialize, Debug)]
 #[serde(rename_all = "kebab-case")]
 pub struct Tags {
-    pub notation: Option<String>,
+    pub notation: Option<Notation>,
     #[serde(rename = "tag")] pub elements: Vec<Tag>,
 }
 
@@ -51,7 +52,7 @@ pub struct Tags {
 #[serde(rename_all = "kebab-case")]
 pub struct Tag {
     pub name: String,
-    pub notation: Option<String>,
+    pub notation: Option<Notation>,
     /// Author name, usually a company or project
     pub author: String,
     /// Name and contact information for the person responsible for the tag
@@ -62,14 +63,14 @@ pub struct Tag {
 #[derive(Deserialize, Serialize, Debug)]
 #[serde(rename_all = "kebab-case")]
 pub struct Definitions {
-    pub notation: Option<String>,
+    pub notation: Option<Notation>,
     #[serde(rename = "$value")] pub elements: Vec<DefinitionsElement>,
 }
 
 #[derive(Deserialize, Serialize, Debug)]
 #[serde(rename_all = "lowercase")]
 pub enum DefinitionsElement {
-    Notation(String),
+    Notation(Notation),
     Include(Include),
     Typedef(Typedef),
     Reference(Reference),
@@ -89,7 +90,7 @@ pub enum DefinitionsElement {
 pub struct Include {
     /// An include's `name` is a full pathname, not just an C/C++ identifier
     pub name: String,
-    pub notation: Option<String>,
+    pub notation: Option<Notation>,
     pub style: IncludeStyle,
     /// This specifies whether the processor needs to append a `.h` extension to the include name.
     /// This is only necessary for the special case of `vk_platform`, because the `.h` is
@@ -111,7 +112,7 @@ pub enum IncludeStyle {
 #[serde(rename_all = "kebab-case")]
 pub struct Typedef {
     pub name: Identifier,
-    pub notation: Option<String>,
+    pub notation: Option<Notation>,
     /// Specifies the original typename for the typedef.
     /// This name should reference an existing definition.
     pub basetype: Identifier,
@@ -122,7 +123,7 @@ pub struct Typedef {
 #[serde(rename_all = "kebab-case")]
 pub struct Reference {
     pub name: Identifier,
-    pub notation: Option<String>,
+    pub notation: Option<Notation>,
     /// Specifies the include file that produces the name.
     /// This text should specify the name of an existing definition of
     /// type `include`.
@@ -135,7 +136,7 @@ pub struct Reference {
 #[serde(rename_all = "kebab-case")]
 pub struct Bitmask {
     pub name: Identifier,
-    pub notation: Option<String>,
+    pub notation: Option<Notation>,
     /// Specifies the original typename for the typedef.
     /// This name should reference an existing definition.
     pub basetype: Identifier,
@@ -162,7 +163,7 @@ pub struct Bitmask {
 #[serde(rename_all = "kebab-case")]
 pub struct Define {
     pub name: Identifier,
-    pub notation: Option<String>,
+    pub notation: Option<Notation>,
     /// If "true", then the processing system should add comments to each line of the
     /// `#define`. That is, the `#define` exists, but has been commented out for some
     /// reason.
@@ -190,12 +191,21 @@ pub struct Define {
     pub value: Option<String>,
 }
 
-/// Creates a definition for a handle.
+/// Handle created using `VK_DEFINE_HANDLE` or `VK_DEFINE_NON_DISPATCHABLE_HANDLE`.
+///
+/// Handles in Vulkan are created using the C macros defined [here](https://github.com/KhronosGroup/Vulkan-Docs/blob/d893b6a79a73ce6bf268d82d2cdac059db7bd725/src/vulkan/vulkan.h#L53-L62).
+/// 
+/// The macro used to define the handle depends on `Handle::ty`. For example:
+/// 
+/// ```c
+/// VK_DEFINE_NON_DISPATCHABLE_HANDLE(VkSemaphore)  // HandleType::NoDispatch
+/// VK_DEFINE_HANDLE(VkCommandBuffer)               // HandleType::Dispatch
+/// ```
 #[derive(Deserialize, Serialize, Debug)]
 #[serde(rename_all = "kebab-case")]
 pub struct Handle {
     pub name: Identifier,
-    pub notation: Option<String>,
+    pub notation: Option<Notation>,
     /// The name(s) of a handle object that is the parent of this handle.
     pub parent: Option<CommaSeparatedIdentifiers>,
     #[serde(rename = "type")] pub ty: HandleType,
@@ -264,7 +274,7 @@ pub type ArraySize = String;
 #[serde(rename_all = "kebab-case")]
 pub struct EnumerationDeclaration {
     pub name: Identifier,
-    pub notation: Option<String>,
+    pub notation: Option<Notation>,
 }
 
 /// Definition that represents a data structure.
@@ -273,7 +283,7 @@ pub struct EnumerationDeclaration {
 #[serde(rename_all = "kebab-case")]
 pub struct Struct {
     pub name: Identifier,
-    pub notation: Option<String>,
+    pub notation: Option<Notation>,
     /// When set to `true`, the struct is used only as a return value by the Vulkan API.
     #[serde(default)]
     pub is_return: bool,
@@ -286,7 +296,7 @@ pub struct Struct {
 #[derive(Deserialize, Serialize, Debug)]
 #[serde(rename_all = "kebab-case")]
 pub enum StructElement {
-    Notation(String),
+    Notation(Notation),
     Member(Field),
 }
 
@@ -296,7 +306,7 @@ pub enum StructElement {
 pub struct Field {
     /// The only situation in which a field may not have a name is as a function param.
     pub name: Option<Identifier>,
-    pub notation: Option<String>,
+    pub notation: Option<Notation>,
     /// The fundamental typename of the variable. This names a definition.
     pub basetype: Identifier,
     /// If `true`, then the variable's base type is constant. If the type is
@@ -338,12 +348,12 @@ pub struct Field {
     pub null_terminate: bool,
 }
 
-/// Defines a union, where the object's value is only one of the members.
+/// Defines a union, where the object's value is only one of its members.
 #[derive(Deserialize, Serialize, Debug)]
 #[serde(rename_all = "kebab-case")]
 pub struct Union {
     pub name: Identifier,
-    pub notation: Option<String>,
+    pub notation: Option<Notation>,
     #[serde(rename = "member")] pub elements: Vec<Field>,
 }
 
@@ -356,7 +366,7 @@ pub struct Union {
 #[serde(rename_all = "kebab-case")]
 pub struct FunctionPointer {
     pub name: Identifier,
-    pub notation: Option<String>,
+    pub notation: Option<Notation>,
     pub return_type: ReturnType,
     #[serde(default)] pub param: Vec<Field>,
 }
@@ -364,7 +374,7 @@ pub struct FunctionPointer {
 #[derive(Deserialize, Serialize, Debug)]
 #[serde(rename_all = "kebab-case")]
 pub struct Constants {
-    pub notation: Option<String>,
+    pub notation: Option<Notation>,
     #[serde(rename = "constant")] pub elements: Vec<Constant>,
 }
 
@@ -379,7 +389,7 @@ pub struct Constants {
 #[serde(rename_all = "kebab-case")]
 pub struct Constant {
     pub name: String,
-    pub notation: Option<String>,
+    pub notation: Option<Notation>,
     pub number: Option<i32>,
     pub hex: Option<String>,
     pub bitpos: Option<u32>,
@@ -389,14 +399,14 @@ pub struct Constant {
 #[derive(Deserialize, Serialize, Debug)]
 #[serde(rename_all = "kebab-case")]
 pub struct Enums {
-    pub notation: Option<String>,
+    pub notation: Option<Notation>,
     #[serde(rename = "$value")] pub elements: Vec<EnumsElement>,
 }
 
 #[derive(Deserialize, Serialize, Debug)]
 #[serde(rename_all = "kebab-case")]
 pub enum EnumsElement {
-    Notation(String),
+    Notation(Notation),
     Enumeration(Enumeration),
 }
 
@@ -404,7 +414,7 @@ pub enum EnumsElement {
 #[serde(rename_all = "kebab-case")]
 pub struct Enumeration {
     pub name: String,
-    pub notation: Option<String>,
+    pub notation: Option<Notation>,
     /// Identifies a special meaning behind the enumeration.
     /// "bitmask" means that the enumerators are either specific bits or
     /// combinations of bits. There should be a `bitmask` definition
@@ -422,7 +432,7 @@ pub enum EnumerationPurpose {
 #[derive(Deserialize, Serialize, Debug)]
 #[serde(rename_all = "kebab-case")]
 pub enum EnumerationElement {
-    Notation(String),
+    Notation(Notation),
     Enum(Constant),
     #[serde(rename = "unused-range")] UnusedRange(Range),
 }
@@ -441,7 +451,7 @@ pub struct Range {
 #[derive(Deserialize, Serialize, Debug)]
 #[serde(rename_all = "kebab-case")]
 pub struct Commands {
-    pub notation: Option<String>,
+    pub notation: Option<Notation>,
     #[serde(rename = "command")] pub elements: Vec<Command>,
 }
 
@@ -450,7 +460,7 @@ pub struct Commands {
 #[serde(rename_all = "kebab-case")]
 pub struct Command {
     pub name: Identifier,
-    pub notation: Option<String>,
+    pub notation: Option<Notation>,
     pub return_type: ReturnType,
     pub param: Vec<Field>,
     pub external_sync: Option<ExternalSync>,
@@ -506,7 +516,7 @@ pub struct Features {
 pub struct Feature {
     /// String name for a definition that is part of the Vulkan API.
     pub name: Identifier,
-    pub notation: Option<String>,
+    pub notation: Option<Notation>,
     /// The name of the API that a feature defines.
     pub api: String,
     /// Version number for the feature.
@@ -520,7 +530,7 @@ pub struct Feature {
 #[derive(Deserialize, Serialize, Debug)]
 #[serde(rename_all = "kebab-case")]
 pub enum FeatureElement {
-    Notation(String),
+    Notation(Notation),
     /// Definitions that are exposed by the specification.
     Require(FeatureSpecification),
     /// Definitions which are *not* to be exposed by the specification.
@@ -534,7 +544,7 @@ pub struct FeatureSpecification {
     /// is associated. All specified requirements/exclusions apply
     /// only to that profile.
     pub profile: Option<String>,
-    pub notation: Option<String>,
+    pub notation: Option<Notation>,
     /// Specifies the name of an extension which this `require` statement needs
     /// for its inclusions to be imported.
     pub extension: Option<Identifier>,
@@ -544,7 +554,7 @@ pub struct FeatureSpecification {
 #[derive(Deserialize, Serialize, Debug)]
 #[serde(rename_all = "kebab-case")]
 pub enum FeatureReference {
-    Notation(String),
+    Notation(Notation),
     /// Reference to a named `definitions` child.
     #[serde(rename = "defref")]
     DefinitionReference(NamedIdentifier),
@@ -559,7 +569,7 @@ pub enum FeatureReference {
 #[derive(Deserialize, Serialize, Debug)]
 #[serde(rename_all = "kebab-case")]
 pub struct Extensions {
-    pub notation: Option<String>,
+    pub notation: Option<Notation>,
     #[serde(rename = "extension")] pub elements: Vec<Extension>,
 }
 
@@ -568,7 +578,7 @@ pub struct Extensions {
 #[serde(rename_all = "kebab-case")]
 pub struct Extension {
     pub name: Identifier,
-    pub notation: Option<String>,
+    pub notation: Option<Notation>,
     /// The extension's registration number.
     /// Used to compute the offsets for enumerators and the like.
     pub number: i32,
@@ -598,7 +608,7 @@ pub struct Extension {
 #[derive(Deserialize, Serialize, Debug)]
 #[serde(rename_all = "kebab-case")]
 pub enum ExtensionElement {
-    Notation(String),
+    Notation(Notation),
     Require(ExtensionSpecification),
     Remove(ExtensionSpecification),
 }
@@ -618,7 +628,7 @@ pub struct ExtensionSpecification {
     /// is associated. All specified requirements/exclusions apply
     /// only to that profile.
     pub profile: Option<String>,
-    pub notation: Option<String>,
+    pub notation: Option<Notation>,
     /// Specifies the name of an extension which this `require` statement needs
     /// for its inclusions to be imported.
     pub extension: Option<Identifier>,
@@ -631,7 +641,7 @@ pub struct ExtensionSpecification {
 #[derive(Deserialize, Serialize, Debug)]
 #[serde(rename_all = "kebab-case")]
 pub enum ExtensionSpecificationElement {
-    Notation(String),
+    Notation(Notation),
     /// Reference to a named `definitions` child.
     #[serde(rename = "defref")]
     DefinitionReference(NamedIdentifier),
@@ -651,7 +661,7 @@ pub enum ExtensionSpecificationElement {
 #[serde(rename_all = "kebab-case")]
 pub struct ExtensionConstant {
     pub name: Identifier,
-    pub notation: Option<String>,
+    pub notation: Option<Notation>,
     /// An arbitrary string constant. The string here is not contained in quotes.
     /// So you should add your own.
     #[serde(rename = "string")]
@@ -670,7 +680,7 @@ pub struct ExtensionConstant {
 #[serde(rename_all = "kebab-case")]
 pub struct ExtensionEnum {
     pub name: Identifier,
-    pub notation: Option<String>,
+    pub notation: Option<Notation>,
     /// Compute the enum's value based on an integer offset.
     pub offset: Option<usize>,
     /// If true, the offset's value should be negated.
@@ -702,11 +712,22 @@ pub type CommaSeparatedBooleans = String;
 /// Text that is an expression in C.
 pub type CExpression = String;
 
+/// C comment
+///
+/// Literally a
+///
+/// ```c
+/// // regular c comment
+/// ```
+///
+/// `Notation` may contain line-breaks
+pub type Notation = String;
+
 #[derive(Deserialize, Serialize, Debug)]
 #[serde(rename_all = "kebab-case")]
 pub struct NamedIdentifier {
     pub name: Identifier,
-    pub notation: Option<String>,
+    pub notation: Option<Notation>,
 }
 
 fn bool_true() -> bool {
