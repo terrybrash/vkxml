@@ -232,20 +232,6 @@ pub enum ReferenceType {
     PointerToConstPointer,
 }
 
-#[derive(Deserialize, Serialize, Debug)]
-#[serde(rename_all = "kebab-case")]
-pub struct ReturnType {
-    pub basetype: Identifier,
-    /// If present, then the variable is a pointer of some sort.
-    pub reference: Option<ReferenceType>,
-    /// Specifies the return codes that represent successful function execution.
-    /// When not specified, then the command doesn't return `VkResult`
-    pub successcodes: Option<CommaSeparatedIdentifiers>,
-    /// Specifies the return codes that represent error conditions.
-    /// When not specified, either the command doesn't return `VkResult` or it cannot "fail".
-    pub errorcodes: Option<CommaSeparatedIdentifiers>,
-}
-
 /// C array type
 #[derive(Deserialize, Serialize, Debug)]
 #[serde(rename_all = "lowercase")]
@@ -300,14 +286,25 @@ pub enum StructElement {
     Member(Field),
 }
 
-/// A typed field used as a member in a struct/union, or as a function parameter.
+/// A typed field used in many different contexts. 
+/// 
+/// `Field` can be used in the following ways:
+/// 
+/// * Struct member
+/// * Union member
+/// * Function parameter
+/// * Function return type
 #[derive(Deserialize, Serialize, Debug)]
 #[serde(rename_all = "kebab-case")]
 pub struct Field {
-    /// The only situation in which a field may not have a name is as a function param.
+    /// `name` will **always** be present when used as a struct or union member.
+    /// 
+    /// `name` will **most likely** be present when used as a function parameter.
+    /// 
+    /// `name` will **never** be present when used as a function return type.
     pub name: Option<Identifier>,
     pub notation: Option<Notation>,
-    /// The fundamental typename of the variable. This names a definition.
+    /// The type of the field.
     pub basetype: Identifier,
     /// If `true`, then the variable's base type is constant. If the type is
     /// a pointer or array, the `const` refers to the base type. So `const T *` rather
@@ -326,10 +323,10 @@ pub struct Field {
     /// For example, if an integer pointer type has `optional` set to `false,true`,
     /// this means that the pointer is required, but the integer value may be zero.
     pub optional: Option<CommaSeparatedBooleans>,
-    /// If set to "false", then auto-validation for the variable should not be generated.
+    /// If set to `false`, then auto-validation for the variable should not be generated.
     #[serde(default = "bool_true")]
     pub auto_validity: bool,
-    /// If present, will be either "true" or an expression that more explicitly
+    /// If present, will be either `true` or an expression that more explicitly
     /// describes how it must externally sync.
     /// If absent, then external synchronization is not necessary.
     pub sync: Option<String>,
@@ -346,6 +343,16 @@ pub struct Field {
     /// then the null-terminator refers only to the innermost string pointers.
     #[serde(default)]
     pub null_terminate: bool,
+    /// `successcodes` may contain a value only if `Field` is used as a function return type.
+    ///
+    /// Specifies the return codes that represent successful function execution. When not 
+    /// specified, then the command doesn't return `VkResult`
+    pub successcodes: Option<CommaSeparatedIdentifiers>,
+    /// `errorcodes` may contain a value only if `Field` is used as a function return type.
+    ///
+    /// Specifies the return codes that represent error conditions. When not specified, either 
+    /// the command doesn't return `VkResult` or it cannot "fail".
+    pub errorcodes: Option<CommaSeparatedIdentifiers>,
 }
 
 /// Defines a union, where the object's value is only one of its members.
@@ -367,7 +374,7 @@ pub struct Union {
 pub struct FunctionPointer {
     pub name: Identifier,
     pub notation: Option<Notation>,
-    pub return_type: ReturnType,
+    pub return_type: Field,
     #[serde(default)] pub param: Vec<Field>,
 }
 
@@ -380,7 +387,8 @@ pub struct Constants {
 
 /// C constant
 ///
-/// A constant can only have one of the following values:
+/// A `Constant` will have only have one of the following values:
+/// 
 /// * `number`
 /// * `hex`
 /// * `bitpos`
@@ -461,7 +469,7 @@ pub struct Commands {
 pub struct Command {
     pub name: Identifier,
     pub notation: Option<Notation>,
-    pub return_type: ReturnType,
+    pub return_type: Field,
     pub param: Vec<Field>,
     pub external_sync: Option<ExternalSync>,
     /// Specifies how the command may be called, relative to render pass instance scopes.
