@@ -1,8 +1,8 @@
 [package]
 name = "vkxml"
-version = "0.2.0"
+version = "0.3.0"
 authors = ["Terry Brashaw <terrybrashaw@gmail.com>"]
 
 [dependencies]
-serde = "*"
-serde_derive = "*"
+serde = "^1.0.34"
+serde_derive = "^1.0.34"
